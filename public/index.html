@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NEMO Assistant</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Cursor glow overlay (follows pointer) -->
+  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
+
+  <div class="app">
+    <header class="header">
+      <div class="avatar">
+        <div class="glow"></div>
+        <img src="/nemo-avatar.svg" alt="NEMO" />
+      </div>
+      <div class="title">
+        <h1>NEMO</h1>
+        <p>Attach files, ask questions. Powered by NVIDIA Integrate.</p>
+      </div>
+    </header>
+
+    <main class="chat" id="chat">
+      <div class="messages" id="messages"></div>
+    </main>
+
+    <form id="composer" class="composer">
+      <div class="file-wrapper" aria-hidden="false">
+        <input type="file" id="file" name="file" />
+        <label for="file" class="file-btn" id="file-btn">📎 Attach</label>
+        <span id="file-name" class="file-name">No file chosen</span>
+        <button type="button" id="clear-file" class="clear-file" title="Remove file" aria-label="Remove file">&times;</button>
+      </div>
+
+      <input type="text" id="message" name="message" placeholder="Type a message to NEMO..." autocomplete="off" />
+      <button type="submit" id="send">Send</button>
+    </form>
+
+    <footer class="footer">
+      <small>Background: black. NEMO glow: orange.</small>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
